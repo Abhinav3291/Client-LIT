@@ -29,7 +29,7 @@ const International = () => {
 
           {/* Hero Image */}
           <img
-            src="\public\TSV_0159-800x600.jpg"
+            src="/TSV_0159-800x600.jpg"
             alt="Fashion Model"
             className="w-full max-w-7xl aspect-video object-cover rounded-lg shadow-2xl mb-12"
           />
