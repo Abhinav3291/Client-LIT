@@ -7,7 +7,7 @@ const SectionContent = ({ sectionKey }) => {
   const [activeItemId, setActiveItemId] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
 
-  const AZURE_API_URL = 'http://localhost:8000/api/news';
+  const AZURE_API_URL = 'https://api-lit-5gop.onrender.com/api/news';
 
   useEffect(() => {
     const fetchNews = async () => {
