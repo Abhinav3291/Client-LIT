@@ -34,7 +34,7 @@ const Newsletter = () => {
 
           <div className="flex justify-center mb-10">
             <img
-              src="\public\pexels-pixabay-265705.jpg"
+              src="client\public\pexels-pixabay-265705.jpg"
               alt="Hero"
               className="w-full max-w-7xl rounded-lg shadow-lg"
             />
