@@ -29,7 +29,7 @@ const Domestic = () => {
 
           {/* Hero Image */}
           <img
-            src="\public\pexels-lara-jameson-8886947.jpg"
+            src="public\pexels-lara-jameson-8886947.jpg"
             alt="Fashion Model"
             className="w-full max-w-7xl aspect-video object-cover rounded-lg shadow-2xl mb-12"
           />
