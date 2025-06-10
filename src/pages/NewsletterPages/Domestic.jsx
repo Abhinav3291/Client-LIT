@@ -16,7 +16,7 @@ const Domestic = () => {
       >
         <Navbar />
 
-        <div className="flex flex-col items-center pt-20 px-6">
+        <div className="flex flex-col items-left pt-20 px-6">
           {/* Stylized Title */}
           <div className="text-center text-white mb-10">
             <div className="text-4xl md:text-5xl font-bold leading-tight">
