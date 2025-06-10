@@ -74,7 +74,7 @@ const SectionContent = ({ sectionKey }) => {
 
         {/* Back Side */}
         <div
-          className="absolute w-full h-full backface-hidden rotate-y-180 bg-purple-100 text-gray-800 p-5 rounded-xl shadow-2xl shadow-purple-300 cursor-pointer"
+          className="absolute w-full h-full backface-hidden rotate-y-180 bg-purple-100 text-gray-800 p-5 rounded-xl  cursor-pointer"
           onClick={() => openFullCard(item)}
         >
           <h4 className="text-lg font-bold mb-2">{item.title}</h4>
