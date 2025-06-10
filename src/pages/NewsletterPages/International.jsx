@@ -38,7 +38,7 @@ const International = () => {
           <div className="w-full">
             <Section
               title={
-                <div className="text-white text-center">
+                <div className="text-white text-left">
                   <div className="text-4xl md:text-5xl font-bold leading-tight">Sustainable</div>
                   <div className="text-5xl md:text-6xl font-extrabold tracking-wide">Fashion</div>
                  
@@ -50,7 +50,7 @@ const International = () => {
 
             <Section
               title={
-                <div className="text-white text-center">
+                <div className="text-white text-left">
                   <div className="text-4xl md:text-5xl font-bold leading-tight">Fast</div>
                   <div className="text-5xl md:text-6xl font-extrabold tracking-wide">Fashion</div>
                 
@@ -62,7 +62,7 @@ const International = () => {
 
             <Section
               title={
-                <div className="text-white text-center">
+                <div className="text-white text-left">
                   <div className="text-4xl md:text-5xl font-bold leading-tight">Luxury</div>
                   <div className="text-5xl md:text-6xl font-extrabold tracking-wide">Fashion</div>
                   
@@ -74,7 +74,7 @@ const International = () => {
 
             <Section
               title={
-                <div className="text-white text-center">
+                <div className="text-white text-left">
                   <div className="text-4xl md:text-5xl font-bold leading-tight">Sneakers</div>
                   <div className="text-5xl md:text-6xl font-extrabold tracking-wide">World</div>
                   
