@@ -12,18 +12,23 @@ const SectionContent = ({ sectionKey }) => {
     const fetchNews = async () => {
       try {
         const response = await fetch(`${AZURE_API_URL}/${sectionKey}`);
-        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
         const data = await response.json();
+        // Log the data to see the image_url values
+        console.log('Fetched data for section:', sectionKey, data);
         setItems(data);
       } catch (error) {
         setError(error.message);
+        console.error('Error fetching news:', error);
       } finally {
         setLoading(false);
       }
     };
 
     fetchNews();
-    const interval = setInterval(fetchNews, 300000); // 5 mins
+    const interval = setInterval(fetchNews, 300000); // 5 mins (300000 ms)
     return () => clearInterval(interval);
   }, [sectionKey]);
 
@@ -52,11 +57,13 @@ const SectionContent = ({ sectionKey }) => {
         {/* Front Side */}
         <div className="absolute w-full h-full backface-hidden rounded-xl shadow-xl overflow-hidden">
           <img
-            src={item.image_url}
+            src={item.image_url} // This is where the image URL from your API goes
             alt={item.title}
             onError={(e) => {
-              e.target.onerror = null;
-              e.target.src = '/VERSACE.webp'; // Fallback image
+              // This is the fallback for when item.image_url fails
+              e.target.onerror = null; // Prevents infinite loop if fallback also fails
+              e.target.src = '/VERSACE.webp'; // Path to your fallback image in the public folder
+              console.error(`Image failed to load for item: ${item.title}. Using fallback.`);
             }}
             className="w-full h-full object-cover rounded-xl"
           />
