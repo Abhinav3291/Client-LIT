@@ -42,7 +42,7 @@ const SectionContent = ({ sectionKey }) => {
   const renderCard = (item, isLarge = false) => (
     <div
       key={item.id}
-      className="group [perspective:1000px]"
+      className="group [perspective:1000px]" // Establishes 3D perspective for the flip
     >
       <div
         className={`relative w-full transition-transform duration-500 transform-style-preserve-3d group-hover:rotate-y-180 ${
@@ -56,7 +56,7 @@ const SectionContent = ({ sectionKey }) => {
             alt={item.title}
             onError={(e) => {
               e.target.onerror = null;
-              e.target.src = '/VERSACE.webp';
+              e.target.src = '/VERSACE.webp'; // Fallback image
             }}
             className="w-full h-full object-cover rounded-xl"
           />
@@ -71,7 +71,7 @@ const SectionContent = ({ sectionKey }) => {
           onClick={() => openFullCard(item)}
         >
           <h4 className="text-lg font-bold mb-2">{item.title}</h4>
-          <p className="text-sm">{item.description}</p>
+          <p className="text-sm">{item.description}</p> {/* Displays the description */}
         </div>
       </div>
     </div>
