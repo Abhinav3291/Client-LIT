@@ -4,7 +4,6 @@ const SectionContent = ({ sectionKey }) => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [activeItemId, setActiveItemId] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
 
   const AZURE_API_URL = 'https://api-lit-5gop.onrender.com/api/news';
@@ -28,10 +27,6 @@ const SectionContent = ({ sectionKey }) => {
     return () => clearInterval(interval);
   }, [sectionKey]);
 
-  const handleImageClick = (id) => {
-    setActiveItemId(activeItemId === id ? null : id);
-  };
-
   const openFullCard = (item) => {
     setSelectedItem(item);
   };
@@ -47,43 +42,43 @@ const SectionContent = ({ sectionKey }) => {
   const renderCard = (item, isLarge = false) => (
     <div
       key={item.id}
-      className="relative rounded-xl shadow-xl overflow-hidden transition-transform duration-300 hover:scale-105 group"
+      className="group [perspective:1000px]"
     >
       <div
-        className={`w-full overflow-hidden ${isLarge ? 'h-80' : 'h-59'}`}
-        onClick={() => handleImageClick(item.id)}
+        className={`relative w-full transition-transform duration-500 transform-style-preserve-3d group-hover:rotate-y-180 ${
+          isLarge ? 'h-80' : 'h-60'
+        }`}
       >
-        <img
-          src={item.image_url}
-          alt={item.title}
-          onError={(e) => {
-            e.target.onerror = null;
-            e.target.src = '/VERSACE.webp';
-          }}
-          className="w-full h-full object-cover cursor-pointer"
-        />
-
-        {activeItemId === item.id && (
-          <div
-            className="absolute inset-0 bg-black bg-opacity-60 text-white p-5 flex items-center justify-center text-sm text-center cursor-pointer"
-            onClick={() => openFullCard(item)}
-          >
-            <p>{item.description}</p>
+        {/* Front Side */}
+        <div className="absolute w-full h-full backface-hidden rounded-xl shadow-xl overflow-hidden">
+          <img
+            src={item.image_url}
+            alt={item.title}
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = '/VERSACE.webp';
+            }}
+            className="w-full h-full object-cover rounded-xl"
+          />
+          <div className="absolute bottom-0 bg-black bg-opacity-50 text-white p-3 w-full">
+            <h4 className="text-lg font-semibold truncate">{item.title}</h4>
           </div>
-        )}
-      </div>
+        </div>
 
-      <div className="p-4 bg-transparent">
-        <h4 className={`truncate text-white ${isLarge ? 'text-xl' : 'text-lg'} font-semibold`}>
-          {item.title}
-        </h4>
-        <p className="text-sm text-gray-400 line-clamp-3">{item.content}</p>
+        {/* Back Side */}
+        <div
+          className="absolute w-full h-full backface-hidden rotate-y-180 bg-purple-100 text-gray-800 p-5 rounded-xl shadow-2xl shadow-purple-300 cursor-pointer"
+          onClick={() => openFullCard(item)}
+        >
+          <h4 className="text-lg font-bold mb-2">{item.title}</h4>
+          <p className="text-sm">{item.description}</p>
+        </div>
       </div>
     </div>
   );
 
   return (
-    <div className="space-y-10 ">
+    <div className="space-y-10">
       {/* Smaller Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {items.slice(0, 3).map((item) => renderCard(item))}
