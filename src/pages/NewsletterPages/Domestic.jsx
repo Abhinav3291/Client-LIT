@@ -38,7 +38,7 @@ const Domestic = () => {
           <div className="w-full">
             <Section
               title={
-                <div className="text-white text-center">
+                <div className="text-white text-left">
                   <div className="text-4xl md:text-5xl font-bold leading-tight">Sustainable</div>
                   <div className="text-5xl md:text-6xl font-extrabold tracking-wide">Fashion</div>
                 </div>
@@ -49,7 +49,7 @@ const Domestic = () => {
 
             <Section
               title={
-                <div className="text-white text-center">
+                <div className="text-white text-left">
                   <div className="text-4xl md:text-5xl font-bold leading-tight">Fast</div>
                   <div className="text-5xl md:text-6xl font-extrabold tracking-wide">Fashion</div>
                 </div>
@@ -60,7 +60,7 @@ const Domestic = () => {
 
             <Section
               title={
-                <div className="text-white text-center">
+                <div className="text-white text-left">
                   <div className="text-4xl md:text-5xl font-bold leading-tight">Luxury</div>
                   <div className="text-5xl md:text-6xl font-extrabold tracking-wide">Fashion</div>
                 </div>
