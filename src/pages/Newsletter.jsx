@@ -23,12 +23,10 @@ const Newsletter = () => {
               <span
                 key={label}
                 onClick={() => navigate(path)}
-                // MODIFIED CLASSES HERE:
-                // Removed bg-purple-600/10 on hover
-                // Added hover:bg-purple-900 for dark purple background on hover
-                // Ensured text-white on hover for visibility
+            
                 className="text-gray-100 cursor-pointer border px-6 py-2 rounded-md transition-all duration-300
-                          hover:shadow-[0_0_15px_4px_rgba(168,85,247,0.7)]  hover:text-white"
+                          hover:shadow-[0_0_8px_2px_rgba(168,85,247,0.3)]
+  hover:text-white"
               >
                 {label}
               </span>
