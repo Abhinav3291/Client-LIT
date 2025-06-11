@@ -5,6 +5,7 @@ import SectionContent from '../components/SectionContent';
 import Section from '../components/Section';
 import React from 'react';
 import { ShieldCheck } from 'lucide-react';
+import AdminDashBoard from '../components/AdminDashBoard';
 
 const Newsletter = () => {
   const navigate = useNavigate();
