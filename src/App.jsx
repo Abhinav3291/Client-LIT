@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Newsletter from './pages/Newsletter'; // ✅ Make sure this path is correct
 import International from './pages/NewsletterPages/International';
 import Domestic from './pages/NewsletterPages/Domestic';
+import AdminPage from './Components/AdminDashBoard';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         {/* Subpages */}
         <Route path="/international" element={<International />} />
         <Route path="/domestic" element={<Domestic />} />
-
+        <Route path="/admin" element={<AdminDashBoard />} />
        
       </Routes>
     </Router>
