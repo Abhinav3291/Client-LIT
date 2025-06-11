@@ -45,7 +45,7 @@ const Newsletter = () => {
             />
             <button
               onClick={() => navigate('/admin')}
-              className="absolute left-4 top-4 bg-white text-purple-700 font-semibold p-2 px-3 rounded-lg shadow-[0_0_10px_rgba(168,85,247,0.5)] flex items-center gap-1 hover:bg-purple-50 transition-all text-sm md:text-base"
+              className="absolute left-4 top-4 bg-black-300 text-purple-700 font-semibold p-2 px-3 rounded-lg shadow-[0_0_10px_rgba(168,85,247,0.5)] flex items-center gap-1 hover:bg-purple-50 transition-all text-sm md:text-base"
             >
               <ShieldCheck className="w-4 h-4 md:w-5 md:h-5" />
               Admin
