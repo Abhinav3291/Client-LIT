@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import SectionContent from '../components/SectionContent';
 import Section from '../components/Section';
 import React from 'react';
-import { ShieldCheck } from 'lucide-react'; // icon for admin access (you can change)
+import { ShieldCheck } from 'lucide-react';
 
 const Newsletter = () => {
   const navigate = useNavigate();
@@ -36,28 +36,31 @@ const Newsletter = () => {
             ))}
           </div>
 
-          {/* Admin icon on image */}
-          <div className="relative flex justify-center mb-10">
+          {/* Hero Image */}
+          <div className="flex justify-center mb-6">
             <img
               src="/pexels-pixabay-265705.jpg"
               alt="Hero"
               className="w-full max-w-7xl rounded-lg shadow-lg"
             />
+          </div>
+
+          {/* Admin Button below image, left-aligned */}
+          <div className="flex justify-start mb-10 max-w-7xl mx-auto">
             <button
               onClick={() => navigate('/admin')}
-              className="absolute left-4 top-4 bg-black-300 text-purple-700 font-semibold p-2 px-3 rounded-lg shadow-[0_0_10px_rgba(168,85,247,0.5)] flex items-center gap-1 hover:bg-purple-50 transition-all text-sm md:text-base"
+              className="bg-white text-purple-700 font-semibold px-4 py-2 rounded-lg shadow-[0_0_10px_rgba(168,85,247,0.5)] flex items-center gap-2 hover:bg-purple-50 transition-all text-sm md:text-base"
             >
-              <ShieldCheck className="w-4 h-4 md:w-5 md:h-5" />
-              Admin
+              <ShieldCheck className="w-5 h-5" />
+              Admin Dashboard
             </button>
           </div>
 
-          {/* All Sections */}
+          {/* All Sections - Titles in one line */}
           <Section
             title={
-              <div className="text-white text-left">
-                <div className="text-4xl md:text-5xl font-bold leading-tight">Sustainable</div>
-                <div className="text-5xl md:text-6xl font-extrabold tracking-wide">Fashion</div>
+              <div className="text-white text-left text-5xl md:text-6xl font-extrabold tracking-wide">
+                Sustainable Fashion
               </div>
             }
           >
@@ -66,9 +69,8 @@ const Newsletter = () => {
 
           <Section
             title={
-              <div className="text-white text-left">
-                <div className="text-4xl md:text-5xl font-bold leading-tight">Fast</div>
-                <div className="text-5xl md:text-6xl font-extrabold tracking-wide">Fashion</div>
+              <div className="text-white text-left text-5xl md:text-6xl font-extrabold tracking-wide">
+                Fast Fashion
               </div>
             }
           >
@@ -77,9 +79,8 @@ const Newsletter = () => {
 
           <Section
             title={
-              <div className="text-white text-left">
-                <div className="text-4xl md:text-5xl font-bold leading-tight">Luxury</div>
-                <div className="text-5xl md:text-6xl font-extrabold tracking-wide">Fashion</div>
+              <div className="text-white text-left text-5xl md:text-6xl font-extrabold tracking-wide">
+                Luxury Fashion
               </div>
             }
           >
@@ -88,9 +89,8 @@ const Newsletter = () => {
 
           <Section
             title={
-              <div className="text-white text-left">
-                <div className="text-4xl md:text-5xl font-bold leading-tight">Sneakers</div>
-                <div className="text-5xl md:text-6xl font-extrabold tracking-wide">World</div>
+              <div className="text-white text-left text-5xl md:text-6xl font-extrabold tracking-wide">
+                Sneakers World
               </div>
             }
           >
